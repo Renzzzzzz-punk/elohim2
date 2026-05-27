@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elohim Shop - Elegant Barber</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS for interactive map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Fija (Sticky) - Siempre visible al hacer scroll -->
+    <nav class="navbar" id="sticky-nav">
+        <div class="logo-container">
+            <!-- Asegúrate de colocar tu imagen de logo en la carpeta assets -->
+            <img src="assets/logo.png" alt="Elohim Logo" class="logo">
+        </div>
+        <div class="nav-content">
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">INICIO</a></li>
+                <li><a href="#nosotros">NOSOTROS</a></li>
+                <li><a href="#servicios">SERVICIOS</a></li>
+                <li><a href="#productos">PRODUCTOS</a></li>
+                <li><a href="#contactanos">CONTACTANOS</a></li>
+            </ul>
+            <div class="nav-line"></div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <!-- Background Carousel -->
+        <div class="carousel-bg">
+            <div class="slide active" style="background-image: url('assets/bg.jpg');"></div>
+            <div class="slide" style="background-image: url('assets/bg2.jpg');"></div>
+        </div>
+
+        <!-- Background Overlay para oscurecer la imagen de fondo -->
+        <div class="overlay"></div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <!-- ELEGANT BARBER -->
+            <div class="elegant-container">
+                <hr class="elegant-line">
+                <h2 class="elegant-text">E L E G A N I &nbsp; B A R B E R</h2>
+                <hr class="elegant-line">
+            </div>
+
+            <!-- ELOHIM -->
+            <h1 class="elohim-title">ELOHIM</h1>
+
+            <!-- SHOP -->
+            <div class="shop-container">
+                <div class="shop-line shop-line-left"></div>
+                <span class="shop-text">SHOP</span>
+                <div class="shop-line shop-line-right"></div>
+            </div>
+
+            <!-- Tagline -->
+            <p class="tagline">tú eres el estandar de <span class="oro">ORO</span></p>
+
+            <!-- Buttons -->
+            <div class="buttons-container">
+                <div class="btn btn-orange">ABIERTO | 11AM-9PM</div>
+                <a href="https://wa.me/51994511157?text=Hola%20Elohim%20Shop%2C%20quisiera%20agendar%20una%20cita."
+                    target="_blank" class="btn btn-green">RESERVAR WHATSAPP</a>
+            </div>
+
+            <!-- Description -->
+            <p class="description">
+                En nuestra barbería combinamos experiencia,<br>
+                estilo y atención personalizada para ofrecerte<br>
+                mucho más que un simple corte. Disfruta de un<br>
+                ambiente moderno y cómodo, donde cada<br>
+                detalle está pensado para resaltar tu imagen y<br>
+                hacerte sentir seguro con tu mejor look.
+            </p>
+        </div>
+    </header>
+
+    <!-- Sección Nosotros -->
+    <section id="nosotros" class="about-section">
+        <div class="about-bg" style="background-image: url('assets/about-bg.jpg');"></div>
+        <div class="about-overlay"></div>
+
+        <div class="about-container">
+            <!-- Izquierda: Imagen del barbero -->
+            <div class="about-image animate-on-scroll fade-in-left">
+                <!-- Por favor asegúrate de tener una imagen barber.png con fondo transparente -->
+                <img src="assets/barber.png" alt="Barbero Profesional" class="barber-img">
+            </div>
+
+            <!-- Derecha: Contenido -->
+            <div class="about-content animate-on-scroll fade-in-right">
+                <!-- Item 1 -->
+                <div class="about-item">
+                    <div class="about-icon">
+                        <img src="assets/scissors.png" alt="Tijeras">
+                    </div>
+                    <div class="about-text">
+                        <p>Somos una barbería dedicada al estilo, la elegancia y la atención de calidad. Buscamos que
+                            cada cliente salga con la mejor versión de sí mismo.</p>
+                    </div>
+                </div>
+
+                <hr class="about-divider">
+
+                <!-- Item 2 -->
+                <div class="about-item">
+                    <div class="about-icon">
+                        <img src="assets/razor.png" alt="Navaja">
+                    </div>
+                    <div class="about-text">
+                        <p>Contamos con barberos apasionados por su trabajo, siempre atentos a las nuevas tendencias y
+                            técnicas para brindarte un look auténtico y personalizado. Ya sea un corte clásico, moderno
+                            o arreglo de barba, nuestro objetivo es que te sientas seguro y satisfecho con el resultado.
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="about-divider">
+
+                <!-- Item 3 -->
+                <div class="about-item">
+                    <div class="about-icon">
+                        <img src="assets/clipper.png" alt="Máquina">
+                    </div>
+                    <div class="about-text">
+                        <p>Más que una barbería, buscamos crear un espacio donde puedas relajarte, renovar tu imagen y
+                            disfrutar de una atención cercana y de confianza. Cada visita es una oportunidad para
+                            resaltar tu personalidad y estilo único.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="services-section">
+        <div class="services-bg" style="background-image: url('assets/services-bg.jpg');"></div>
+        <div class="services-overlay"></div>
+
+        <div class="services-container">
+            <div class="services-grid animate-on-scroll fade-in-up">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="assets/low-taper-fade.jpg" alt="Low Taper Fade">
+                    </div>
+                    <h3 class="service-title">Low Taper Fade</h3>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="assets/mohicano.jpg" alt="Mohicano">
+                    </div>
+                    <h3 class="service-title">Mohicano</h3>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="assets/burst-fade.png" alt="Burst Fade">
+                    </div>
+                    <h3 class="service-title">Burst Fade</h3>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="assets/drop-fade.jpg" alt="Drop Fade">
+                    </div>
+                    <h3 class="service-title">Drop Fade</h3>
+                </div>
+                <!-- Card 5 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="assets/mid-fade.png" alt="Mid Fade">
+                    </div>
+                    <h3 class="service-title">Mid Fade</h3>
+                </div>
+                <!-- Card 6 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="assets/high-fade.jpg" alt="High Fade">
+                    </div>
+                    <h3 class="service-title">High Fade</h3>
+                </div>
+                <!-- Card 7 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="assets/buzz-cut.jpg" alt="Buzz Cut">
+                    </div>
+                    <h3 class="service-title">Buzz Cut</h3>
+                </div>
+                <!-- Card 8 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="assets/french-crop.jpg" alt="French Crop">
+                    </div>
+                    <h3 class="service-title">French Crop</h3>
+                </div>
+            </div>
+
+            <!-- Sección Instagram / Galería (Integrada dentro de Servicios) -->
+            <div class="instagram-container">
+                <!-- Encabezado -->
+                <div class="instagram-header animate-on-scroll fade-in-up">
+                    <img src="assets/instagram-icon.png" alt="Instagram" class="ig-icon">
+                    <h2 class="ig-title">SÍGUENOS EN INSTAGRAM</h2>
+                </div>
+                <p class="ig-subtitle animate-on-scroll fade-in-up">Descubre nuestras últimas novedades</p>
+
+                <!-- Grid 4 tarjetas: 2 videos + 2 fotos -->
+                <div class="ig-grid animate-on-scroll fade-in-up">
+
+                    <!-- Video 1 -->
+                    <div class="ig-card">
+                        <video class="ig-media" autoplay muted loop playsinline>
+                            <source src="assets/video1.mp4" type="video/mp4">
+                        </video>
+                        <div class="ig-card-overlay">
+                            <span class="ig-play-icon">▶</span>
+                        </div>
+                    </div>
+
+                    <!-- Foto 1 -->
+                    <div class="ig-card">
+                        <img src="assets/ig-foto1.jpg" alt="Foto barbería 1" class="ig-media">
+                        <div class="ig-card-overlay"></div>
+                    </div>
+
+                    <!-- Foto 2 -->
+                    <div class="ig-card">
+                        <img src="assets/ig-foto2.jpg" alt="Foto barbería 2" class="ig-media">
+                        <div class="ig-card-overlay"></div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="ig-card">
+                        <video class="ig-media" autoplay muted loop playsinline>
+                            <source src="assets/video2.mp4" type="video/mp4">
+                        </video>
+                        <div class="ig-card-overlay">
+                            <span class="ig-play-icon">▶</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Botón Seguir Instagram -->
+                <div class="ig-btn-container animate-on-scroll fade-in-up">
+                    <a href="https://www.instagram.com/elhoim_barber/" target="_blank" class="ig-btn">
+                        <span class="ig-btn-text">SEGUIR INSTAGRAM</span>
+                        <img src="assets/instagram-icon.png" alt="Instagram" class="ig-btn-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Productos -->
+    <section id="productos" class="products-section">
+        <div class="products-bg" style="background-image: url('assets/products-bg.jpg');"></div>
+        <div class="products-overlay"></div>
+
+        <div class="products-container">
+            <h2 class="products-section-title animate-on-scroll fade-in-up">NUESTROS PRODUCTOS</h2>
+            <p class="products-section-subtitle animate-on-scroll fade-in-up">El complemento ideal para mantener tu
+                estilo</p>
+
+            <div class="products-layout animate-on-scroll fade-in-up">
+                <!-- Sidebar Izquierdo: Vistos Recientemente -->
+                <aside class="recent-products-sidebar">
+                    <h3 class="recent-products-title">Vistos recientemente</h3>
+                    <div class="recent-products-list" id="recent-products-list">
+                        <div class="no-recent">Ninguno visto aún</div>
+                    </div>
+                </aside>
+
+                <!-- Grid Derecho: Productos -->
+                <div class="products-grid">
+                    <!-- Tarjeta 1: Cera Bandido Red -->
+                    <div class="product-card" data-id="1" data-name="Bandido Hair Styling Wax No7 Red 150ml"
+                        data-price="$12.00" data-img="assets/product-wax-red.jpg"
+                        data-desc="Cera moldeadora Bandido Red de fijación fuerte y acabado mate natural. Perfecta para dar estructura y volumen al cabello sin dejar residuos grasos.">
+                        <div class="product-card-img-wrapper">
+                            <img src="assets/product-wax-red.jpg" alt="Cera Bandido Red Matte"
+                                onerror="this.src='https://placehold.co/300x300?text=Cera+Red'">
+                        </div>
+                        <h3 class="product-card-title">Bandido Hair Styling Wax | Shiny Look Strong Hold Aqua Gel Wax
+                            No7 Red 150 ml</h3>
+                        <div class="product-card-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="product-card-price">S/20.00</p>
+                    </div>
+
+                    <!-- Tarjeta 2: Cera Bandido Green -->
+                    <div class="product-card" data-id="2" data-name="Bandido Matte Hair Wax Green 150ml"
+                        data-price="$12.00" data-img="assets/product-wax-green.jpg"
+                        data-desc="Cera moldeadora Bandido Green con fijación media-fuerte y brillo moderado. Aporta una textura flexible y definición, ideal para peinados modernos y casuales.">
+                        <div class="product-card-img-wrapper">
+                            <img src="assets/product-wax-green.jpg" alt="Cera Bandido Green Matte"
+                                onerror="this.src='https://placehold.co/300x300?text=Cera+Green'">
+                        </div>
+                        <h3 class="product-card-title">Bandido Hair Styling Wax | Matiffying Maximum Hold | Matte Hair
+                            Wax Green 150 ml</h3>
+                        <div class="product-card-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="product-card-price">S/20.00</p>
+                    </div>
+
+                    <!-- Tarjeta 3: Laca Bandido Spray -->
+                    <div class="product-card" data-id="3" data-name="Bandido Aqua Wax 5 Blue 150ml" data-price="$15.00"
+                        data-img="assets/product-spray.jpg"
+                        data-desc="Dale a tu cabello el estilo definitivo con Bandido Aqua Wax Blue. Esta cera para el cabello está especialmente desarrollada para una fijación duradera con un brillo natural. Gracias a su textura cremosa, es fácil de aplicar y de enjuagar.">
+                        <div class="product-card-img-wrapper">
+                            <img src="assets/product-spray.jpg" alt="Laca Fijadora Bandido"
+                                onerror="this.src='https://placehold.co/300x300?text=Laca+Spray'">
+                        </div>
+                        <h3 class="product-card-title">Bandido Aqua Wax 5 Blue 150ml</h3>
+                        <div class="product-card-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="product-card-price">S/20.00</p>
+                    </div>
+
+                    <!-- Tarjeta 4: Aceite de Barba -->
+                    <div class="product-card" data-id="4" data-name="Bandido Cera Negro Fijación Extrema 150ml"
+                        data-price="$18.00" data-img="assets/product-oil.jpg"
+                        data-desc="La Bandido Cera Negro Fijación Extrema 150ml ofrece una fijación extrema y duradera para mantener peinados definidos todo el día. Ideal para todo tipo de cabello, brinda un acabado moderno con brillo moderado y fácil aplicación.">
+                        <div class="product-card-img-wrapper">
+                            <img src="assets/product-oil.jpg" alt="Aceite para Barba Premium"
+                                onerror="this.src='https://placehold.co/300x300?text=Aceite+Barba'">
+                        </div>
+                        <h3 class="product-card-title">Bandido Cera para el Cabello (NO.8) Negro Fijación Extrema 150ml
+                        </h3>
+                        <div class="product-card-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="product-card-price">S/20.00</p>
+                    </div>
+
+                    <!-- Tarjeta 5: Shampoo de Barba y Cabello -->
+                    <div class="product-card" data-id="5" data-name="Bandido Aqua 1 Cera Bianco Brillante 150ml"
+                        data-price="$14.00" data-img="assets/product-shampoo.jpg"
+                        data-desc="La Bandido Aqua 1 Cera Bianco Brillante 150ml brinda una fijación fuerte con acabado brillante, ideal para peinados modernos y definidos. Su fórmula permite moldear el cabello fácilmente sin dejar residuos.">
+                        <div class="product-card-img-wrapper">
+                            <img src="assets/product-shampoo.jpg" alt="Shampoo Premium Elohim"
+                                onerror="this.src='https://placehold.co/300x300?text=Shampoo'">
+                        </div>
+                        <h3 class="product-card-title">Bandido Aqua 1 Cera Bianco Brillante 150ml | Cera per capelli
+                            uomo | Cera per capelli Aqua a tenuta forte | Gel per capelli</h3>
+                        <div class="product-card-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="product-card-price">S/20.00</p>
+                    </div>
+
+                    <!-- Tarjeta 6: After Shave -->
+                    <div class="product-card" data-id="6" data-name="Bandido Haar Styling Poeder Wax 32g"
+                        data-price="$10.00" data-img="assets/product-aftershave.jpg"
+                        data-desc="La Bandido Haar Styling Poeder Wax 32g es un polvo wax para peinado que aporta volumen, textura y fijación natural al cabello, ideal para estilos modernos con acabado mate y ligero.">
+                        <div class="product-card-img-wrapper">
+                            <img src="assets/product-aftershave.jpg" alt="After Shave Bandido Cologne"
+                                onerror="this.src='https://placehold.co/300x300?text=After+Shave'">
+                        </div>
+                        <h3 class="product-card-title">Bandido Haar Styling Poeder Wax 32g -Mat Effect</h3>
+                        <div class="product-card-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="product-card-price">S/28.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contáctanos -->
+    <section id="contactanos" class="contact-section">
+        <div class="contact-bg" style="background-image: url('assets/products-bg.jpg');"></div>
+        <div class="contact-overlay"></div>
+
+        <div class="contact-container">
+            <!-- Encabezado de la Sección -->
+            <div class="contact-header animate-on-scroll fade-in-up">
+                <span class="contact-subtitle">NUESTRA UBICACIÓN Y HORARIOS</span>
+                <h2 class="contact-title">
+                    <img src="assets/logo.png" alt="Elohim Logo" class="contact-logo-small">
+                    VISITA ELOHIM SHOP
+                </h2>
+                <p class="contact-description-text">Encuéntranos, revisa nuestros horarios y ve qué nos hace especiales.
+                </p>
+            </div>
+
+            <!-- Caja del Mapa (Con borde naranja/oro y esquinas redondeadas) -->
+            <div class="map-box animate-on-scroll fade-in-up">
+                <div id="map" style="height: 380px; width: 100%;"></div>
+                <div class="map-overlay-text">
+                    <span>Av. María Elena Moyano con Av. Juan Velasco Alvarado, Villa El Salvador, Lima</span>
+                </div>
+            </div>
+
+            <!-- Grid de Información de Contacto y Horarios -->
+            <div class="contact-info-grid animate-on-scroll fade-in-up">
+                <!-- Columna Izquierda: Horarios y Dirección -->
+                <div class="info-card hours-card">
+                    <div class="address-header">
+                        <div class="address-details">
+                            <h3>Av. María Elena Moyano con Av. Juan Velasco Alvarado</h3>
+                            <p>Villa El Salvador, Lima, Perú</p>
+                        </div>
+                    </div>
+                    <hr class="contact-card-divider">
+                    <div class="hours-header">
+                        <h3>HORARIOS DE OPERACIÓN</h3>
+                    </div>
+                    <ul class="hours-list">
+                        <li data-day="1" class="day-row">
+                            <span class="day-name">Lunes</span>
+                            <span class="day-time">11:00 - 21:00</span>
+                        </li>
+                        <li data-day="2" class="day-row">
+                            <span class="day-name">Martes</span>
+                            <span class="day-time">11:00 - 21:00</span>
+                        </li>
+                        <li data-day="3" class="day-row">
+                            <span class="day-name">Miércoles</span>
+                            <span class="day-time">11:00 - 21:00</span>
+                        </li>
+                        <li data-day="4" class="day-row">
+                            <span class="day-name">Jueves</span>
+                            <span class="day-time">11:00 - 21:00</span>
+                        </li>
+                        <li data-day="5" class="day-row">
+                            <span class="day-name">Viernes</span>
+                            <span class="day-time">11:00 - 21:00</span>
+                        </li>
+                        <li data-day="6" class="day-row">
+                            <span class="day-name">Sábado</span>
+                            <span class="day-time">11:00 - 21:00</span>
+                        </li>
+                        <li data-day="0" class="day-row">
+                            <span class="day-name">Domingo</span>
+                            <span class="day-time cerrados">Cerrado</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna Derecha: Botón de WhatsApp y Redes Sociales -->
+                <div class="info-card whatsapp-card-container">
+                    <div class="card-title-group">
+                        <h3>CONTÁCTANOS</h3>
+                    </div>
+                    <a href="https://wa.me/51994511157?text=Hola%20Elohim%20Shop%2C%20quisiera%20agendar%20una%20cita."
+                        target="_blank" class="contact-whatsapp-btn">
+                        <div class="whatsapp-btn-content">
+                            <img src="assets/whatsaap-icon.png" alt="WhatsApp" class="wa-icon-large"
+                                onerror="this.src='https://cdn-icons-png.flaticon.com/512/124/124034.png'">
+                            <div class="wa-btn-text-wrapper">
+                                <span class="wa-sub">Envíanos un mensaje por WhatsApp</span>
+                                <span class="wa-num">+51 994 511 157</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Redes Sociales de Contacto -->
+                    <div class="contact-socials-container">
+                        <h4>SÍGUENOS EN REDES</h4>
+                        <div class="contact-socials-grid">
+                            <a href="https://www.instagram.com/elhoim_barber/" target="_blank"
+                                class="contact-social-btn instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-instagram">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61589974834958" target="_blank"
+                                class="contact-social-btn facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-facebook">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="https://www.tiktok.com/@elhoimbarber" target="_blank"
+                                class="contact-social-btn tiktok">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-tiktok">
+                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                                </svg>
+                                <span>TikTok</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Elohim Logo" class="footer-logo-img">
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/elhoim_barber/" target="_blank" aria-label="Instagram"
+                    class="social-link-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-instagram">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61589974834958" target="_blank" aria-label="Facebook"
+                    class="social-link-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-facebook">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@elhoimbarber" target="_blank" aria-label="TikTok"
+                    class="social-link-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-tiktok">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                    </svg>
+                </a>
+            </div>
+            <p class="footer-copyright">
+                &copy; 2026 Elohim Shop. Todos los derechos reservados. Diseñado por <span
+                    class="novacode-brand">NovaCode</span>.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal de Detalle de Producto (Proyección) -->
+    <div id="product-modal" class="product-modal">
+        <div class="product-modal-backdrop"></div>
+        <div class="product-modal-wrapper">
+            <span class="product-modal-close" id="modal-close-btn">&times;</span>
+            <div class="product-modal-body">
+                <div class="product-modal-img-container">
+                    <img id="modal-product-img" src="" alt="Detalle del Producto">
+                </div>
+                <div class="product-modal-info">
+                    <h2 id="modal-product-title" class="product-modal-title"></h2>
+                    <div class="product-modal-stars">⭐⭐⭐⭐⭐</div>
+                    <div id="modal-product-price" class="product-modal-price"></div>
+                    <p id="modal-product-desc" class="product-modal-desc"></p>
+                    <a href="#" id="modal-whatsapp-link" target="_blank" class="modal-whatsapp-btn">
+                        <span>PEDIR POR WHATSAPP</span>
+                        <img src="assets/whatsaap-icon.png" alt="WhatsApp Icon" class="whatsapp-btn-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS for interactive map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
